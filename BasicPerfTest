@@ -1,0 +1,6 @@
+#New installs can use this basic test to see overall performance.  Not super scientific but a simple baseline for network pulls and disk writes
+# to compare times bewteen new images
+
+startup=$(date +%s);yum update -y;stopup=$(date +%s);time_p=$(( $stopup - $startup )); 
+echo "The intial update test took $time_p seconds" >> /tmp/test-result
+
