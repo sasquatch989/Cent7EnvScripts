@@ -1,0 +1,5 @@
+sudo yum groupinstall "Virtualization Host" -y
+sudo nmcli con add type bridge ifname br0 con-name br0 
+sudo nmcli con del em1
+sudo nmcli con add type bridge-slave autoconnect yes con-name em1 ifname em1 master br0
+sudo nmcli con up br0
